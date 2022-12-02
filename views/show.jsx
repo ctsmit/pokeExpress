@@ -4,7 +4,7 @@ const myStyle = {
    backgroundColor: "#151515",
 }
 
-class Index extends React.Component {
+class Show extends React.Component {  //! 
    render() {
       const { pokemon } = this.props
       return (
@@ -17,4 +17,7 @@ class Index extends React.Component {
       )
    }
 }
-module.exports = Index
+module.exports = Show //! can still be called Index and i works?
+
+
+ 
