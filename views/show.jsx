@@ -3,10 +3,7 @@ const myStyle = {
    color: "aquamarine",
    backgroundColor: "#151515",
 }
-const imageSize = {
-   height: "300px",
-   width: "300px",
-}
+
 
 class Show extends React.Component {
    render() {
@@ -15,8 +12,8 @@ class Show extends React.Component {
          <body style={myStyle}>
             <h1>Gotta Catch 'Em All</h1>
             <h2>{pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</h2>
-            {<img src={pokemon.img + ".jpg"} alt="uh oh" style={imageSize} />}
-            <a href={"/pokemon"}>Back?</a>
+            {<img src={"https://img.pokemondb.net/artwork/" + pokemon.name.toLowerCase() + ".jpg"} alt="uh oh" />}
+            <a style={{ textDecoration: 'none' }} href={"/pokemon"}>Back?</a>
          </body>
       )
    }

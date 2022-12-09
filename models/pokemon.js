@@ -7,7 +7,7 @@ const model = mongoose.model //shorthand for model function
 // https://mongoosejs.com/docs/guide.html
 const pokeSchema = new Schema({
    name: String,
-   img: String,
+   // img: String,
 })
 
 // Creating Tweet model : We need to convert our schema into a model-- will be stored in 'tweets' collection.  Mongo does this for you automatically
