@@ -1,4 +1,3 @@
-
 require("dotenv").config()
 const express = require("express")
 const app = express()
@@ -25,9 +24,9 @@ mongoose.connection.once("open", () => {
 
 // Connection Error/Success
 // Define callback functions for various events
-db.on("error", (err) => console.log(err.message + " is mongod not running?"));
-db.on("open", () => console.log("mongo connected: "));
-db.on("close", () => console.log("mongo disconnected"));
+db.on("error", (err) => console.log(err.message + " is mongod not running?"))
+db.on("open", () => console.log("mongo connected: "))
+db.on("close", () => console.log("mongo disconnected"))
 
 //!Index
 app.get("/pokemon", (req, res) => {
@@ -60,4 +59,3 @@ app.get("/pokemon/:id", (req, res) => {
 })
 
 app.listen(port, () => console.log("listening"))
-
