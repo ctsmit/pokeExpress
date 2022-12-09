@@ -14,12 +14,16 @@ class Index extends React.Component {
                {pokemon.map((mon, i) => {
                   return (
                      <li>
-                        <a style={{ textDecoration: 'none' }}  href={`/pokemon/${mon.id}`}>{mon.name[0].toUpperCase() + mon.name.slice(1)}</a>
+                        <a style={{ textDecoration: "none" }} href={`/pokemon/${mon.id}`}>
+                           {mon.name[0].toUpperCase() + mon.name.slice(1)}
+                        </a>
                      </li>
                   )
                })}
             </ul>
-            <a style={{ textDecoration: 'none' }} href="/pokemon/new">Create your own Pokemon?</a>
+            <a style={{ textDecoration: "none" }} href="/pokemon/new">
+               Create your own Pokemon?
+            </a>
          </body>
       )
    }
