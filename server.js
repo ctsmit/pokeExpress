@@ -8,7 +8,7 @@ const mongoURI = process.env.MONGO_URI
 
 const Pokemon = require("./models/pokemon")
 
-app.use(express.urlencoded({ extended: false })) //boilerplate code
+app.use(express.urlencoded({ extended: true })) //boilerplate code
 
 app.set("view engine", "jsx") //(specifies what you are setting, the engine(jsx,ejs,pug))
 app.engine("jsx", require("express-react-views").createEngine()) //only for jsx?
@@ -16,16 +16,12 @@ app.engine("jsx", require("express-react-views").createEngine()) //only for jsx?
 // setting up mongoose------------------------------------------
 mongoose.set("strictQuery", true)
 
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-
-mongoose.connection.once("open", () => {
-   console.log("connected to mongo")
-})
+mongoose.connect(mongoURI)
 
 // Connection Error/Success
 // Define callback functions for various events
 db.on("error", (err) => console.log(err.message + " is mongod not running?"))
-db.on("open", () => console.log("mongo connected: "))
+db.on("open", () => console.log("mongo connected"))
 db.on("close", () => console.log("mongo disconnected"))
 
 //!Index
@@ -59,3 +55,4 @@ app.get("/pokemon/:id", (req, res) => {
 })
 
 app.listen(port, () => console.log("listening"))
+
