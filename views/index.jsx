@@ -17,12 +17,15 @@ class Index extends React.Component {
                         <a style={{ textDecoration: "none" }} href={`/pokemon/${mon.id}`}>
                            {mon.name[0].toUpperCase() + mon.name.slice(1)}
                         </a>
+                        <form action={`/pokemon/${mon.id}?method=DELETE`} method="POST">
+                           <input type="submit" value="DELETE"/>
+                        </form>
                      </li>
                   )
                })}
             </ul>
             <a style={{ textDecoration: "none" }} href="/pokemon/new">
-               Create your own Pokemon?
+               Add Pokemon?
             </a>
          </body>
       )
